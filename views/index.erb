@@ -1,0 +1,39 @@
+<!Doctype HTML>
+<html>
+  <head>
+    <title>Users</title>
+    <style>
+      table {padding: 0px; margin: 0px;}
+      td {padding: 0px; margin: 0px;}
+      tr.head {background-color: #dddddd;}
+      td.name {width: 120px;}
+      td.age {width: 60px;}
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Users</h1>
+    </div>
+    <div>
+      <form method="POST" action="/user">
+        <table>
+          <tr class="head">
+            <td class="name"> name </td>
+            <td colspan=2 class="age"> age </td>
+          </tr>
+          <% @users.each do |user| %>
+            <tr>
+              <td> <%= user.name %> </td>
+              <td colspan=2> <%= user.age %> </td>
+            </tr>
+          <% end %>
+          <tr>
+            <td> <input type="text" name="name"> </td>
+            <td> <input type="text" name="age"> </td>
+            <td> <input type="submit" value="send"> </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
